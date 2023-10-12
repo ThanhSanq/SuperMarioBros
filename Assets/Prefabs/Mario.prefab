@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5438795198709874181}
   - component: {fileID: 5221615260872204370}
   - component: {fileID: 194333536151223447}
+  - component: {fileID: 4478716094798260023}
   - component: {fileID: 9097248241197223169}
   - component: {fileID: 5052660690641554052}
   m_Layer: 3
@@ -74,6 +75,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &4478716094798260023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622112296560728343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df44334207c746a4f9deb438e3d777cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallRenderer: {fileID: 2254400306494802120}
+  bigRenderer: {fileID: 5833694666588332398}
 --- !u!114 &9097248241197223169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +227,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3571301238131892382}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e0a6e14f5493334e9925d86bbd5a10e, type: 3}
   m_Name: 
@@ -221,7 +236,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ceaf175af51849645991587f40b6ceb2, type: 3}
   - {fileID: 21300000, guid: 4729017e1a3638642a90f489d3ccf421, type: 3}
   - {fileID: 21300000, guid: 471289c2967f8fc4ea935162b1d8b215, type: 3}
-  - {fileID: 21300000, guid: 4729017e1a3638642a90f489d3ccf421, type: 3}
   framerate: 0.16666667
 --- !u!1 &6098341096388075715
 GameObject:
@@ -341,5 +355,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d459293eb39f45242a2395dc39182f6f, type: 3}
   - {fileID: 21300000, guid: 22d6e21dd449ce64aad79dda2c04d445, type: 3}
   - {fileID: 21300000, guid: 931ba3af6fcedd8428bc23ef25c763e6, type: 3}
-  - {fileID: 21300000, guid: 22d6e21dd449ce64aad79dda2c04d445, type: 3}
   framerate: 0.16666667

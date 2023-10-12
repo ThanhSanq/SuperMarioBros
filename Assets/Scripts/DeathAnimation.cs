@@ -10,6 +10,7 @@ public class DeathAnimation : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     private void OnEnable()
     {
         UpdateSprite();
@@ -17,12 +18,17 @@ public class DeathAnimation : MonoBehaviour
         StartCoroutine(Animate());
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     private void UpdateSprite()
     {
         spriteRenderer.enabled = true;
         spriteRenderer.sortingOrder = 10;
 
-        if(deadSprite != null)
+        if (deadSprite != null)
         {
             spriteRenderer.sprite = deadSprite;
         }
@@ -32,24 +38,27 @@ public class DeathAnimation : MonoBehaviour
     {
         Collider2D[] colliders = GetComponents<Collider2D>();
 
-        foreach(Collider2D collider in colliders)
+        foreach (Collider2D collider in colliders)
         {
             collider.enabled = false;
         }
+
         GetComponent<Rigidbody2D>().isKinematic = true;
-        
+
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
         EntityMovement entityMovement = GetComponent<EntityMovement>();
 
-        if(playerMovement != null)
+        if (playerMovement != null)
         {
             playerMovement.enabled = false;
         }
-        if(entityMovement != null)
+
+        if (entityMovement != null)
         {
             entityMovement.enabled = false;
         }
     }
+
     private IEnumerator Animate()
     {
         float elapsed = 0f;
@@ -60,12 +69,13 @@ public class DeathAnimation : MonoBehaviour
 
         Vector3 velocity = Vector3.up * jumpVelocity;
 
-        while(elapsed < duration)
+        while (elapsed < duration)
         {
             transform.position += velocity * Time.deltaTime;
-            velocity.y += gravity + Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
             elapsed += Time.deltaTime;
             yield return null;
         }
     }
+
 }
