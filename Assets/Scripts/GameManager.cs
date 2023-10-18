@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public int lives { get; private set; }
     public int coins { get; private set; }
 
+   
+
+    public GameObject pauseScreen;
+
     private void Awake()
     {
         if(Instance != null)
@@ -37,6 +41,10 @@ public class GameManager : MonoBehaviour
 
         NewGame();
     }
+    //private void Update()
+    //{
+    //    Pausescreen();
+    //}
 
     private void NewGame()
     {
@@ -46,7 +54,7 @@ public class GameManager : MonoBehaviour
         LoadLevel(1, 1);
     }
 
-    private void LoadLevel(int world, int stage)
+    public void LoadLevel(int world, int stage)
     {
         this.world = world;
         this.stage = stage;
@@ -85,6 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void AddCoin()
     {
+
         coins++;
 
         if(coins == 100)
@@ -97,4 +106,12 @@ public class GameManager : MonoBehaviour
     {
         lives++;
     }
+    //public void Pausescreen()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        Time.timeScale = 0f;
+    //        pauseScreen.SetActive(true);
+    //    }
+    //}
 }
